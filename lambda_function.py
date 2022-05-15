@@ -10,8 +10,9 @@ def connect():
 def lambda_handler(event, context):
     try:
         print('Connecting')
-        id_aluno = event['id_aluno']
-        nome = event['nome']
+        body = event['body']
+        id_aluno = body['id_aluno']
+        nome = body['nome']
         con = connect()
         cur = con.cursor()
         print('Saving')
